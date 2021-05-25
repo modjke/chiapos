@@ -50,6 +50,7 @@ namespace UniformSort {
         while ((1ULL << bucket_length) < 2 * num_entries) bucket_length++;
         bitfield is_used(rounded_entries);
 
+        uint64_t read_pos = input_disk_begin;
         uint64_t buf_size = 0;
         uint64_t buf_ofs = 0;
         for (uint64_t i = 0; i < num_entries; i++) {
